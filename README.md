@@ -3,4 +3,4 @@
 # Public Project
 <!-- this is a comment -->
 ## Histogram
-![Histogram] (images2/histogram.png)
+![Histogram](images2/histogram.png)
