@@ -2,4 +2,5 @@
 
 # Public Project
 <!-- this is a comment -->
-![Histogram]/histogram-example-2.png 
+## Histogram
+![Histogram] (images2/histogram-example-2.png)
