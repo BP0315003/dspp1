@@ -7,7 +7,7 @@ September 2025 term - Year 1 - Term 3
 <!-- ## Work Experience -->
 
 
-## Public Projects
+## Public Project
 ### Active lives and falls in older adults
 An anlysis of area level factors influencing activity levels in older adults with a view to implementing targeted interventions to prevent falls.
 #### Data sources:
@@ -16,4 +16,4 @@ An anlysis of area level factors influencing activity levels in older adults wit
   - ONS - datasets and shape files
 <!-- this is a comment -->
 <!-- ![Histogram](images2/histogram.png)-->
-Project
+
