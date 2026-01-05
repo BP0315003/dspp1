@@ -99,7 +99,7 @@ Figure P4 illustrates variables before and after log transformations:
 Amendments to feature-engineered columns were added in step 3.
 
 ### Data Analysis 
-Ordinary Linear regression (OLR) models how activity levels in older adults vary with LSOA variables, informing targeted interventions and resource distribution. 
+Ordinary Linear Regression (OLR) models how activity levels in older adults vary with LSOA variables, informing targeted interventions and resource distribution. 
 
 (Feng, Miao and Turner, 2025) spatial autocorrelation at LSOA level as a limitation, as adjacent areas often share characteristics, yet OLR assumes independent observations potentially resulting in misleading results.  
 ‘Moran’s I’ (Bobbitt, 2021) will be performed assessing whether LSOAs are more similar than expected by chance.  If significant spatial autocorrelation is detected, Geographically Weighted Regression (GWR) will be necessary.
@@ -243,7 +243,8 @@ Darker LSOAs are rural or less populated, with limited public green space and lo
 
 #### Map of Active older adult activity percentages:
 <img src="images2/A3g.png" alt="Active Lives" width="70%">
-Figure A3g  (produced in leaflet package rather than ggplot2).
+Figure A3g<br>  
+(produced in leaflet package rather than ggplot2).
 
 ## Appendix 4
 #### Public project – Power BI Filter options for Active lives measures
