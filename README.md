@@ -61,7 +61,9 @@ Datasets are aggregated to LSOA, with no personal identifiers. Organisations are
 Census data uses disclosure control, rounding and area switching, protecting small numbers.  LSOA volumes minimise analysis impact.
 
 Active lives LSOA estimates are ‘modelled’, introducing some uncertainty.
+
 2022/23 provides the most up-to-date activity insights, noting COVID-related shifts - such as increased activity during lockdowns and potential impacts on self-reported health (ONS, 2021). 
+
 Figure P2 illustrates the ‘extract transform and load’ (ETL) process preparing data for modelling.
 
 <img src="images2/ETL.png" alt="Active Lives" width="80%">
@@ -76,7 +78,9 @@ A single 'null' row was removed from the activity file:
 <img src="images2/P2b.png" alt="Active Lives" width="40%">
 
 All files use 2021 LSOA codes except for ‘access to green spaces’ which utilises 2011 codes.  A lookup converts to 2021 codes, but some 2011 LSOAs ‘merged’ or ‘split’.
+
 ‘Splits’ - new LSOAs inherit old LSOA attributes; ‘merges’ - population-weighted estimates are used, per public health guidance. Imputation ensures complete representation, minimising bias and underrepresentation. (DHSC, 2019)
+
 Files are converted from long to wide format, with one row per LSOA, enabling feature engineering such as proportions of populations aged 75+ and single occupant households.
 
 #### Step 3
@@ -96,7 +100,9 @@ Amendments to feature-engineered columns were added in step 3.
 
 ### Data Analysis 
 Ordinary Linear regression (OLR) models how activity levels in older adults vary with LSOA variables, informing targeted interventions and resource distribution. 
-(Feng, Miao and Turner, 2025) spatial autocorrelation at LSOA level as a limitation, as adjacent areas often share characteristics, yet OLR assumes independent observations potentially resulting in misleading results.  ‘Moran’s I’ (Bobbitt, 2021) will be performed assessing whether LSOAs are more similar than expected by chance.  If significant spatial autocorrelation is detected, Geographically Weighted Regression (GWR) will be necessary.
+
+(Feng, Miao and Turner, 2025) spatial autocorrelation at LSOA level as a limitation, as adjacent areas often share characteristics, yet OLR assumes independent observations potentially resulting in misleading results.  
+‘Moran’s I’ (Bobbitt, 2021) will be performed assessing whether LSOAs are more similar than expected by chance.  If significant spatial autocorrelation is detected, Geographically Weighted Regression (GWR) will be necessary.
 
 Compernolle et al., 2022, identified that variables such as age structure, health, functional ability, deprivation, income, education, marital status, and access to facilities most broadly influence activity levels.  
 
@@ -116,7 +122,8 @@ Data was split 70:30 for training and testing. OLR was performed on the training
 
 <img src="images2/P8.png" alt="Active Lives" width="40%">
 
-RMSE and MAE are consistent between train and test.  Activity levels range between 14% to 57%, and no significant outliers, making RMSE (0.048 or 4.8%) reliable. The small difference (3.8 percentage points) between RMSE and MAE indicates no overfitting.  Mean Absolute Percentage Error (MAPE) due to low activity values and zeros risking instability (Frost, 2025).
+RMSE and MAE are consistent between train and test.  Activity levels range between 14% to 57%, and no significant outliers, making RMSE (0.048 or 4.8%) reliable. The small difference (3.8 percentage points) between RMSE and MAE indicates no overfitting.  Mean Absolute Percentage Error (MAPE) risks instability due to low activity values and zeros (Frost, 2025).
+
 R² and adjusted R² are similar, explaining 42% of variance, the model generalises well performing consistently to unseen data (Figure P8).  0.42 is realistic for social models influenced by human, area, and policy factors (Frost, 2017). 
 
 
@@ -124,9 +131,11 @@ R² and adjusted R² are similar, explaining 42% of variance, the model generali
 
 #### Interpretation
 Positive coefficients indicate higher predicted activity; negative coefficients indicate reductions.  All variables are statistically significant (p < 0.05), though some coefficients are small due to the large sample (23,615 LSOAs). Effect sizes are more meaningful (Frost, 2021), variables are visualised on a map in appendix 3, highlighting key LSOAs.
+
 Results show older adults’ lower activity is spatially clustered in deprived, urban LSOAs and in areas with higher proportions of carers and single-occupant households.
 
 Rural areas have different challenges with limited access to public green space, abundant green space being mostly private.  Geographically and culturally targeted interventions are needed, support for carers and access to rural facilities. 
+
 Testing combined interactions may reveal further intervention nuances. 
 
 ## Data Visualisation 
@@ -143,7 +152,9 @@ Export and screenshot options support business use.
 
 ## Recommendations
 Undertake geographically weighted regression mitigating spatial autocorrelation.
+
 Test combined interactions, especially involving deprivation and ethnicity, as they may affect intervention nuances
+
 Engage with health and voluntary organisations, local authorities and those with lived experience to understand socio demographical influences, to refine the model and targeted interventions.
 
  
