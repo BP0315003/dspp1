@@ -25,7 +25,7 @@ Studies have examined intrinsic risk factors like medications and medical condit
 
 Using linear regression on public LSOA data, the goal is to identify areas where targeted interventions can increase activity, improve health outcomes, and ensure equitable access for underserved populations.
 
-# Findings:
+### Findings:
 Higher proportions of older adults slightly increase predicted activity, but this effect reduces with increased green space distance. 
 
 Deprivation lowers activity, especially in rural areas, indicating need for targeted interventions.  Rural areas with higher non-white populations indicate lower activity; urban areas are less affected, possibly due to better access.
@@ -36,7 +36,7 @@ Longer distances to green spaces reduce activity; closer green spaces are import
 
 The model performs and generalises well, with an adjusted R² of 42% - acceptable for social and demographic models.  Root mean squared error (RMSE) of 0.048 (train and test) indicates predictions are within 5% and mean absolute error (MAE) at 3.8 percentage points suggests no large outliers.  ‘Moran’s I’ confirms spatial autocorrelation warranting further development to include geographically weighted regression (GWR).
 
-# Conclusion
+### Conclusion
 Despite spatial autocorrelation limits, the model supports established ideas. It can inform tailored interventions addressing urban and rural uniqueness, influencing activity and fall risk in older adults. LSOA data reflects average characteristics, it is not appropriate to infer all individuals are the same.
 
 ## Data Infrastructure and Tools 
@@ -50,7 +50,7 @@ Power BI (PBI) displays LSOA activity data against England benchmarks.  Multiple
 
 As Bristol, North Somerset and South Gloucestershire (BNSSG) ICB (Integrated Care Board) will use this data, it was loaded into SQL server for PBI scheduling, although direct import from Excel is possible.  Power query ‘unpivots’ wide datasets into a long format as shown in figure P1, simplifying visualisation with minimal slicers and measures.  
 
-![Active_Lives](Images2/P1.png)
+![Active_Lives](images2/P1.png)
 
 PBI is the organisation’s in-house dashboard tool; however, Quarto provides interactive visuals that are easier to distribute and function as a standalone solution.
 
@@ -67,7 +67,7 @@ Active lives LSOA estimates are ‘modelled’, introducing some uncertainty.
 2022/23 provides the most up-to-date activity insights, noting COVID-related shifts - such as increased activity during lockdowns and potential impacts on self-reported health (ONS, 2021). 
 Figure P2 illustrates the ‘extract transform and load’ (ETL) process preparing data for modelling.
 
-![Active_Lives](Images2/ETL.png)
+<img src="images2/ETL.png" alt="Active Lives" width="80%">
 
 #### Step 1
 Individual exposure variables were extracted from ONS/Census ensuring comprehensive LSOA coverage, minimising statistical disclosure.  Files were imported into R.
@@ -76,7 +76,7 @@ Individual exposure variables were extracted from ONS/Census ensuring comprehens
 To minimise risks from poor or inaccurate model outputs, data quality checks confirmed all files contained 35,672 unique LSOAs (completeness, validity). Ensured no missing or duplicate LSOAs (uniqueness), matched across datasets (consistency), and verified consistent data types. Data were drawn from aligned periods: active lives 2022/23, Census 2021, greenspace 2020 (timeliness) (Meet the data quality dimensions, 2021).  
 A single 'null' row was removed from the activity file:  
 
-![Active_Lives](Images2/P2b.png)
+<img src="images2/P2b.png" alt="Active Lives" width="40%">
 
 All files use 2021 LSOA codes except for ‘access to green spaces’ which utilises 2011 codes.  A lookup converts to 2021 codes, but some 2011 LSOAs ‘merged’ or ‘split’.
 ‘Splits’ - new LSOAs inherit old LSOA attributes; ‘merges’ - population-weighted estimates are used, per public health guidance. Imputation ensures complete representation, minimising bias and underrepresentation. (DHSC, 2019)
@@ -88,11 +88,11 @@ Merges all files onto a full LSOA base via left-joins. A subsequent left-join to
 #### Step 4
 EDA identified several skewed variables, log transformations normalised distributions. Descriptive statistics, Figure P3, and distribution plots (appendix 1) guided decisions.
 
-![Active_Lives](Images2/P3.png)
+<img src="images2/P3.png" alt="Active Lives" width="80%">
 
 Figure P4 illustrates variables before and after log transformations:
 
-![Active_Lives](Images2/P4.png)
+<img src="images2/P4.png" alt="Active Lives" width="80%">
 
 #### Step 5
 Amendments to feature-engineered columns were added in step 3.
@@ -105,24 +105,25 @@ Compernolle et al., 2022, identified that variables such as age structure, healt
 
 A correlation analysis (Figure P5) was conducted on census variables; those with minimal (<=0.75) correlation and wide relevance were included in the model.  
 
-![Active_Lives](Images2/P5.png)
+<img src="images2/P5.png" alt="Active Lives" width="80%">
 
 Rurality, initially tested as a binary variable, showed strong effects on certain variables - especially single households and non-UK language speakers - as illustrated in figure P5.
 
-![Active_Lives](Images2/P6.png)
+<img src="images2/P6.png" alt="Active Lives" width="80%">
 
 Active_aged_75+ is a continuous variable measuring ≥60 minutes of activity in adults aged 75+. The focus is on factors enhancing activity, not inactivity percentages. Distribution is normal with no significant outliers:
 
-![Active_Lives](Images2/P7.png)
+<img src="images2/P7.png" alt="Active Lives" width="70%">
 
 Data was split 70:30 for training and testing. OLR was performed on the training data and applied to the test data with the following results:
 
-![Active_Lives](Images2/P8.png)
+<img src="images2/P8.png" alt="Active Lives" width="40%">
 
 RMSE and MAE are consistent between train and test.  Activity levels range between 14% to 57%, and no significant outliers, making RMSE (0.048 or 4.8%) reliable. The small difference (3.8 percentage points) between RMSE and MAE indicates no overfitting.  Mean Absolute Percentage Error (MAPE) due to low activity values and zeros risking instability (Frost, 2025).
 R² and adjusted R² are similar, explaining 42% of variance, the model generalises well performing consistently to unseen data (Figure P8).  0.42 is realistic for social models influenced by human, area, and policy factors (Frost, 2017). 
 
-![Active_Lives](Images2/P9.png)
+
+<img src="images2/P9.png" alt="Active Lives" width="70%">
 
 #### Interpretation
 Positive coefficients indicate higher predicted activity; negative coefficients indicate reductions.  All variables are statistically significant (p < 0.05), though some coefficients are small due to the large sample (23,615 LSOAs). Effect sizes are more meaningful (Frost, 2021), variables are visualised on a map in appendix 3, highlighting key LSOAs.
@@ -134,11 +135,14 @@ Testing combined interactions may reveal further intervention nuances. 
 ## Data Visualisation 
 A subset of BNSSG activity data is presented in Power BI, with bar charts comparing England, South West, and Local Authority levels. All ages and indicators across published years are available (figure P9). Interactive filters allow users to select data and areas of interest (appendix 4).
 
-![Active_Lives](Images2/P10.png)
+
+<img src="images2/P10.png" alt="Active Lives" width="70%">
+
 
 LSOA choropleth maps (Figure P10) show percentage activity, highlighting high and low areas; tooltips display exact values. Colours follow mandated organisational guidelines; percentage figures are shown on bars.
 
-![Active_Lives](Images2/P11.png)
+
+<img src="images2/P11.png" alt="Active Lives" width="70%">
 
 Export and screenshot options support business use.
 
@@ -146,6 +150,7 @@ Export and screenshot options support business use.
 Undertake geographically weighted regression mitigating spatial autocorrelation.
 Test combined interactions, especially involving deprivation and ethnicity, as they may affect intervention nuances
 Engage with health and voluntary organisations, local authorities and those with lived experience to understand socio demographical influences, to refine the model and targeted interventions.
+
  
 ## References
 BasuMallick, C. (2022) ‘R vs. Python’, Spiceworks Inc, 6 December. Available at: https://www.spiceworks.com/tech/devops/articles/r-vs-python/ (Accessed: 13 December 2025).
@@ -178,17 +183,19 @@ Skelton, D. and Todd, C. (2004) ‘What are the main risk factors for falls amon
 ## Appendix 1
 #### Public project – Distribution plots to inform variable selection and log requirements
 
-![Active_Lives](Images2/A1.png)
+<img src="images2/A1a.png" alt="Active Lives" width="70%">
+<img src="images2/A1b.png" alt="Active Lives" width="80%">
+<img src="images2/A1c.png" alt="Active Lives" width="70%">
 
 ## Appendix 2
 #### Public project – R model outputs
 Initial variable correlation prior to removing variables with multicollinearity:
 
-![Active_Lives](Images2/A2a.png)
+<img src="images2/A2a.png" alt="Active Lives" width="70%">
 
 Linear Regression summary output:
 
-![Active_Lives](Images2/A2b.png)
+<img src="images2/A2b.png" alt="Active Lives" width="70%">
 
 ## Appendix 3
 #### Public project – Effect size maps
@@ -197,71 +204,73 @@ Effects are identified for LSOAs in training data and derived for LSOAs not incl
 #### Proportion of Older adults:
 Darker areas represent urban, inner-city LSOAs with younger populations and fewer older adults. Lighter yellow/orange LSOAs (around 0.6) have higher proportions of older adults and predicted activity levels, supporting the model linking older age with increased activity.   Focus interventions on darker LSOAs with fewer older adults and lower activity, or mid-range areas when including deprivation or carer presence.
 
-![Active_Lives](Images2/A3a.png)
+<img src="images2/A3a.png" alt="Active Lives" width="70%">
+Figure A3a
 
 #### Proportion of households in the deprived dimension:
 Darkest LSOAs, in the most deprived 20% of England, have marginally lower activity levels among older adults. Targeted community support could increase their activity.
 
-![Active_Lives](Images2/A3b.png)
+<img src="images2/A3b.png" alt="Active Lives" width="70%">
 
 #### Proportion of non-white ethnicity:
 Darker LSOAs in urban areas have higher non-white populations and negative coefficients, indicating reduced activity among older adults. Lighter LSOAs have fewer non-white residents and minimal impact on activity.
 
-![Active_Lives](Images2/A3c.png)
+<img src="images2/A3c.png" alt="Active Lives" width="70%">
 
 #### Proportion of households with carers:
 Darker LSOAs outside inner cities have higher proportions of households with carers and greater negative impacts on older adults’ activity levels (coefficients > -0.15). These areas are typically rural and known for older populations. Targeted interventions in these areas could support carers to be more active, especially in rural LSOAs with limited access to facilities.
 
-![Active_Lives](Images2/A3d.png)
+<img src="images2/A3d.png" alt="Active Lives" width="70%">
+Figure A3d</p>
 
 Darker LSOAs (coeffients -0.1 to 0.125) are located in areas know to have higher proportions of older adults indicating a negative effect (lower activity levels).  Some of these areas coincide with higher proportions of households with carers, compounding the effects on activity levels.  Support needs are likely to be different to suit different needs.
 
 #### Distance to green space:
 Darker LSOA coefficients (closer to 0) are found in urban areas, indicating populations are nearer to green spaces. Lighter areas, more rural and less urban, suggest greater distances. This appears counterintuitive since rural areas are generally greener. The indicator measures proximity to public parks and gardens, which may be less accessible in rural regions. While green spaces may be closer in cities, this does not reflect their total size.
 
-![Active_Lives](Images2/A3e.png)
+<img src="images2/A3e.png" alt="Active Lives" width="70%">
 
 #### Total green space size:
 Darker LSOAs are rural or less populated, with limited public green space and longer distances to access it. Rural areas have large green areas, but these are mostly non-public; footpaths are not included in green space measures. Larger green spaces are typically on city outskirts and suburbs. Overall, the impact of space size on activity levels is minimal.
 
-![Active_Lives](Images2/A3f.png)
+<img src="images2/A3f.png" alt="Active Lives" width="60%">
 
 #### Map of Active older adult activity percentages:
-![Active_Lives](Images2/A3g.png)
-(produced in leaflet package rather than ggplot2).
+<img src="images2/A3g.png" alt="Active Lives" width="70%">
+Figure A3g  (produced in leaflet package rather than ggplot2).
 
 ## Appendix 4
 #### Public project – Power BI Filter options for Active lives measures
-![Active_Lives](Images2/A4.png)
+<img src="images2/A4.png" alt="Active Lives" width="70%">
 
 ## Appendix 5
 #### Public project – Work project Exploratory data analysis
 #### Population by Acorn groups:
-![Active_Lives](Images2/A5a.png)
-![Active_Lives](Images2/A5b.png)
+<img src="images2/A5a.png" alt="Active Lives" width="70%">
+<img src="images2/A5b.png" alt="Active Lives" width="70%">
 
 #### Histograms of people by LSOA:
 3 Large LSOA values relate to large university accommodation sites.  Population is transient.
-![Active_Lives](Images2/A5c.png)
-![Active_Lives](Images2/A5d.png)
+<img src="images2/A5c.png" alt="Active Lives" width="70%">
+<img src="images2/A5d.png" alt="Active Lives" width="70%">
 
 #### Distribution of Age:
-![Active_Lives](Images2/A5e.png)
+<img src="images2/A5e.png" alt="Active Lives" width="70%">
 
 #### Distribution of Age by Locality:
-![Active_Lives](Images2/A5f.png)
+<img src="images2/A5f.png" alt="Active Lives" width="70%">
 
 #### Distribution of IMD:
 PCA scaling prevents IMD from dominating.
-![Active_Lives](Images2/A5g.png)
+<img src="images2/A5g.png" alt="Active Lives" width="70%">
 
 ## Appendix 6
 #### Public project – R syntax for regression and Moran’s I
 
-![Active_Lives](Images2/A6a.png)
-![Active_Lives](Images2/A6b.png)
-![Active_Lives](Images2/A6c.png)
-![Active_Lives](Images2/A6d.png)
+<img src="images2/A6a.png" alt="Active Lives" width="70%">
+<img src="images2/A6b.png" alt="Active Lives" width="70%">
+<img src="images2/A6c.png" alt="Active Lives" width="60%">
+<img src="images2/A6d.png" alt="Active Lives" width="70%">
 
 ## Appendix 7
 #### Data sources and links
