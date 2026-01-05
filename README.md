@@ -2,22 +2,19 @@
 ## Data Science Professional Practice 1
 September 2025 term - Year 1 - Term 3
 
-## Public Project
+## Public Project - Active lives
 ### Active lives and falls in older adults
 An anlysis of area level factors influencing activity levels in older adults with a view to implementing targeted interventions to prevent falls.
 
-#### Summary:
+#### Project results overview:
 Results show older adults’ lower activity is spatially clustered in deprived, urban LSOAs and in areas with higher proportions of carers and single-occupant households.
-Rural areas have different challenges with limited access to public green space, abundant green space being mostly private.  Geographically and culturally targeted interventions are needed, support for carers and access to rural facilities
-
-  - The full project report can be located in the Project report folder
+Rural areas have different challenges with limited access to public green space, abundant green space being mostly private.  Geographically and culturally targeted interventions are needed, support for carers and access to rural facilities.  However, spatial autocorrelation exists and geographicall weighted regression needs to be undertaken to confirm results.
 
 #### Data sources:
   - Sport England - Active Lives, Adults 22/23
   - Census 2021 - Custom datasets
   - ONS - datasets and shape files
 
-### Active lives
 ## Executive Summary 
 Older people are the most sedentary segment of the population, just over half meet physical activity recommendations (Gawler et al., 2016).  Studies show inactive people fall more than moderately or very active people; rates increase for individuals aged 75+.  Injuries sustained “reduce mobility and independence and increase the risk of premature death” (Skelton and Todd, 2004).  Age UK (Fall prevention for the elderly, 2024) advise being active can maintain strength, balance and coordination, preventing falls.
 
@@ -133,14 +130,12 @@ Rural areas have different challenges with limited access to public green space,
 Testing combined interactions may reveal further intervention nuances. 
 
 ## Data Visualisation 
-A subset of BNSSG activity data is presented in Power BI, with bar charts comparing England, South West, and Local Authority levels. All ages and indicators across published years are available (figure P9). Interactive filters allow users to select data and areas of interest (appendix 4).
-
+A subset of BNSSG activity data is presented in Power BI, with bar charts comparing England, South West, and Local Authority levels. All ages and indicators across published years are available (figure P9). Interactive filters allow users to select data and areas of interest (appendix 4).<br><br>
 
 <img src="images2/P10.png" alt="Active Lives" width="70%">
 
 
-LSOA choropleth maps (Figure P10) show percentage activity, highlighting high and low areas; tooltips display exact values. Colours follow mandated organisational guidelines; percentage figures are shown on bars.
-
+LSOA choropleth maps (Figure P10) show percentage activity, highlighting high and low areas; tooltips display exact values. Colours follow mandated organisational guidelines; percentage figures are shown on bars.<br><br>
 
 <img src="images2/P11.png" alt="Active Lives" width="70%">
 
