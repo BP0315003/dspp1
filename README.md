@@ -43,4 +43,4 @@ Python offers equivalent libraries (pandas, numpy, seaborn, matplotlib, scikit-l
 Power BI (PBI) displays LSOA activity data against England benchmarks.  Multiple years’ data were manually combined into a single excel file.  Copilot's accuracy in this task to save time could be explored to process futures published files.  
 As Bristol, North Somerset and South Gloucestershire (BNSSG) ICB (Integrated Care Board) will use this data, it was loaded into SQL server for PBI scheduling, although direct import from Excel is possible.  Power query ‘unpivots’ wide datasets into a long format as shown in figure P1, simplifying visualisation with minimal slicers and measures.  
 
-### Figure p1
+![Deprivation&QOF](Images2/FigureP1.png)
