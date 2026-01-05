@@ -91,6 +91,7 @@ EDA identified several skewed variables, log transformations normalised distribu
 ![Active_Lives](Images2/P3.png)
 
 Figure P4 illustrates variables before and after log transformations:
+
 ![Active_Lives](Images2/P4.png)
 
 #### Step 5
@@ -107,12 +108,15 @@ A correlation analysis (Figure P5) was conducted on census variables; those with
 ![Active_Lives](Images2/P5.png)
 
 Rurality, initially tested as a binary variable, showed strong effects on certain variables - especially single households and non-UK language speakers - as illustrated in figure P5.
+
 ![Active_Lives](Images2/P6.png)
 
 Active_aged_75+ is a continuous variable measuring ≥60 minutes of activity in adults aged 75+. The focus is on factors enhancing activity, not inactivity percentages. Distribution is normal with no significant outliers:
+
 ![Active_Lives](Images2/P7.png)
 
 Data was split 70:30 for training and testing. OLR was performed on the training data and applied to the test data with the following results:
+
 ![Active_Lives](Images2/P8.png)
 
 RMSE and MAE are consistent between train and test.  Activity levels range between 14% to 57%, and no significant outliers, making RMSE (0.048 or 4.8%) reliable. The small difference (3.8 percentage points) between RMSE and MAE indicates no overfitting.  Mean Absolute Percentage Error (MAPE) due to low activity values and zeros risking instability (Frost, 2025).
@@ -179,9 +183,11 @@ Skelton, D. and Todd, C. (2004) ‘What are the main risk factors for falls amon
 ## Appendix 2
 #### Public project – R model outputs
 Initial variable correlation prior to removing variables with multicollinearity:
+
 ![Active_Lives](Images2/A2a.png)
 
-Linear Regression summary output
+Linear Regression summary output:
+
 ![Active_Lives](Images2/A2b.png)
 
 ## Appendix 3
@@ -190,28 +196,34 @@ Effects are identified for LSOAs in training data and derived for LSOAs not incl
 
 #### Proportion of Older adults:
 Darker areas represent urban, inner-city LSOAs with younger populations and fewer older adults. Lighter yellow/orange LSOAs (around 0.6) have higher proportions of older adults and predicted activity levels, supporting the model linking older age with increased activity.   Focus interventions on darker LSOAs with fewer older adults and lower activity, or mid-range areas when including deprivation or carer presence.
+
 ![Active_Lives](Images2/A3a.png)
 
 #### Proportion of households in the deprived dimension:
 Darkest LSOAs, in the most deprived 20% of England, have marginally lower activity levels among older adults. Targeted community support could increase their activity.
+
 ![Active_Lives](Images2/A3b.png)
 
 #### Proportion of non-white ethnicity:
 Darker LSOAs in urban areas have higher non-white populations and negative coefficients, indicating reduced activity among older adults. Lighter LSOAs have fewer non-white residents and minimal impact on activity.
+
 ![Active_Lives](Images2/A3c.png)
 
 #### Proportion of households with carers:
 Darker LSOAs outside inner cities have higher proportions of households with carers and greater negative impacts on older adults’ activity levels (coefficients > -0.15). These areas are typically rural and known for older populations. Targeted interventions in these areas could support carers to be more active, especially in rural LSOAs with limited access to facilities.
+
 ![Active_Lives](Images2/A3d.png)
 
 Darker LSOAs (coeffients -0.1 to 0.125) are located in areas know to have higher proportions of older adults indicating a negative effect (lower activity levels).  Some of these areas coincide with higher proportions of households with carers, compounding the effects on activity levels.  Support needs are likely to be different to suit different needs.
 
 #### Distance to green space:
 Darker LSOA coefficients (closer to 0) are found in urban areas, indicating populations are nearer to green spaces. Lighter areas, more rural and less urban, suggest greater distances. This appears counterintuitive since rural areas are generally greener. The indicator measures proximity to public parks and gardens, which may be less accessible in rural regions. While green spaces may be closer in cities, this does not reflect their total size.
+
 ![Active_Lives](Images2/A3e.png)
 
 #### Total green space size:
 Darker LSOAs are rural or less populated, with limited public green space and longer distances to access it. Rural areas have large green areas, but these are mostly non-public; footpaths are not included in green space measures. Larger green spaces are typically on city outskirts and suburbs. Overall, the impact of space size on activity levels is minimal.
+
 ![Active_Lives](Images2/A3f.png)
 
 #### Map of Active older adult activity percentages:
@@ -254,21 +266,37 @@ PCA scaling prevents IMD from dominating.
 ## Appendix 7
 #### Data sources and links
  Census adults and children in household https://www.ons.gov.uk/datasets/create/filter-outputs/b5fa5921-c49f-412b-bb75-6ebaac8bf8a7#get-data
+ 
  Dependant children in household https://www.ons.gov.uk/datasets/create/filter-outputs/a645b541-f4bb-43ff-ba4c-b3cbf9acce75#get-data
+ 
  Deprived in household dimension https://www.ons.gov.uk/datasets/create/filter-outputs/41811325-3df1-4905-be14-cab83d9c1063#get-data
+ 
  Day to day activities limited a lot https://www.ons.gov.uk/datasets/create/filter-outputs/aac81789-b89c-4631-babd-ae3e4215f7fa#get-data
+ 
  Economic activity https://www.ons.gov.uk/datasets/create/filter-outputs/30c9791a-20b4-441b-a01a-1916677624d4#get-data
+ 
  Age https://www.ons.gov.uk/datasets/create/filter-outputs/2de81125-a6b6-46bb-8432-ce1cb2d527c4#get-data
+ 
  General health https://www.ons.gov.uk/datasets/create/filter-outputs/4471e9bb-a9f2-4dac-b84b-45bbedb62395#get-data
+
  Hours worked https://www.ons.gov.uk/datasets/create/filter-outputs/876cb362-4005-4c75-bd12-9a3e5971127e#get-data
+
  Main language https://www.ons.gov.uk/datasets/create/filter-outputs/6cc18cae-6147-4d23-9e78-f12c4c170d34#get-data
+
  Household composition https://www.ons.gov.uk/datasets/create/filter-outputs/50c4be76-0011-43f6-b868-f7e9e4eda219#get-data
+ 
  Unpaid carer https://www.ons.gov.uk/datasets/create/filter-outputs/a7211e9b-6233-40d5-9bf5-61d33af04a81#get-data
+ 
  Health https://www.ons.gov.uk/datasets/create/filter-outputs/9282411a-79ea-4874-84cd-20448a9cf919#get-data
+
  Deprived in health dimension https://www.ons.gov.uk/datasets/create/filter-outputs/1feb654b-5fc4-48d0-a109-53e2e49a4e0f#get-data
+
  Ethnic group https://www.ons.gov.uk/datasets/create/filter-outputs/c6ac687f-b2ce-435e-beb2-cbe1758ec96d#get-data
+
  Active Lives Active Lives Small Area Estimates Tool | Sport England
+
  Access to green space Access to public green space in Great Britain - Office for National Statistics
+ 
  LSOA lookup LSOA (2011) to LSOA (2021) to Local Authority District (2022) Exact Fit Lookup for EW (V3) - data.gov.uk
  
 
