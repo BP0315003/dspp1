@@ -104,7 +104,7 @@ A correlation analysis (Figure P5) was conducted on census variables; those with
 
 <img src="images2/P5.png" alt="Active Lives" width="80%">
 
-Rurality, initially tested as a binary variable, showed strong effects on certain variables - especially single households and non-UK language speakers - as illustrated in figure P5.
+Rurality, initially tested as a binary variable, showed strong effects on certain variables - especially single households and non-UK language speakers - as illustrated in figure P6.
 
 <img src="images2/P6.png" alt="Active Lives" width="80%">
 
