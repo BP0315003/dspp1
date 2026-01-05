@@ -205,7 +205,7 @@ Effects are identified for LSOAs in training data and derived for LSOAs not incl
 Darker areas represent urban, inner-city LSOAs with younger populations and fewer older adults. Lighter yellow/orange LSOAs (around 0.6) have higher proportions of older adults and predicted activity levels, supporting the model linking older age with increased activity.   Focus interventions on darker LSOAs with fewer older adults and lower activity, or mid-range areas when including deprivation or carer presence.
 
 <img src="images2/A3a.png" alt="Active Lives" width="70%">
-Figure A3a
+Figure A3a<br><br>
 
 #### Proportion of households in the deprived dimension:
 Darkest LSOAs, in the most deprived 20% of England, have marginally lower activity levels among older adults. Targeted community support could increase their activity.
@@ -221,7 +221,7 @@ Darker LSOAs in urban areas have higher non-white populations and negative coeff
 Darker LSOAs outside inner cities have higher proportions of households with carers and greater negative impacts on older adults’ activity levels (coefficients > -0.15). These areas are typically rural and known for older populations. Targeted interventions in these areas could support carers to be more active, especially in rural LSOAs with limited access to facilities.
 
 <img src="images2/A3d.png" alt="Active Lives" width="70%">
-Figure A3d</p>
+Figure A3d<br><br>
 
 Darker LSOAs (coeffients -0.1 to 0.125) are located in areas know to have higher proportions of older adults indicating a negative effect (lower activity levels).  Some of these areas coincide with higher proportions of households with carers, compounding the effects on activity levels.  Support needs are likely to be different to suit different needs.
 
@@ -246,31 +246,35 @@ Figure A3g  (produced in leaflet package rather than ggplot2).
 ## Appendix 5
 #### Public project – Work project Exploratory data analysis
 #### Population by Acorn groups:
-<img src="images2/A5a2.png" alt="Active Lives" width="60%">
-Figure A5a</p>
-<img src="images2/A5b2.png" alt="Active Lives" width="60%">
-Figure A5b</p>
+
+<img src="images2/A5a.png" alt="Active Lives" width="50%">
+Figure A5a<br><br>
+
+<img src="images2/A5b.png" alt="Active Lives" width="50%">
+Figure A5b<br><br>
 
 #### Histograms of people by LSOA:
 3 Large LSOA values relate to large university accommodation sites.  Population is transient.
-<img src="images2/A5c2.png" alt="Active Lives" width="60%">
-Figure A5c</p>
 
-<img src="images2/A5d2.png" alt="Active Lives" width="60%">
-Figure A5d</p>
+<img src="images2/A5c.png" alt="Active Lives" width="50%">
+Figure A5c<br><br>
+
+<img src="images2/A5d.png" alt="Active Lives" width="50%">
+Figure A5d<br><br>
 
 #### Distribution of Age:
-<img src="images2/A5e2.png" alt="Active Lives" width="60%">
-Figure A5e</p>
+<img src="images2/A5e.png" alt="Active Lives" width="50%">
+Figure A5e<br><br>
 
 #### Distribution of Age by Locality:
-<img src="images2/A5f2.png" alt="Active Lives" width="60%">
-Figure A5f</p>
+<img src="images2/A5f.png" alt="Active Lives" width="50%">
+Figure A5f<br><br>
 
 #### Distribution of IMD:
 PCA scaling prevents IMD from dominating.
-<img src="images2/A5g2.png" alt="Active Lives" width="60%">
-Figure A5g</p>
+
+<img src="images2/A5g.png" alt="Active Lives" width="50%">
+Figure A5g<br><br>
 
 ## Appendix 6
 #### Public project – R syntax for regression and Moran’s I
