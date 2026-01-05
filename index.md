@@ -6,7 +6,7 @@ title: BP0315003 Data Science Portfolio
 <!--<img src="images2/ProfilePicture.png" alt="Profile Picture" width="25%"><br>-->
 <!--(picture from CoPilot)-->
 
-# Data Science Professional Practice 1
+# Data Science Professional Practice
 September 2025 term - Year 1 - Term 3
 
 ## Public Project - Active lives
