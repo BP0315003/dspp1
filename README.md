@@ -246,23 +246,31 @@ Figure A3g  (produced in leaflet package rather than ggplot2).
 ## Appendix 5
 #### Public project – Work project Exploratory data analysis
 #### Population by Acorn groups:
-<img src="images2/A5a2.png" alt="Active Lives" width="70%">
-<img src="images2/A5b2.png" alt="Active Lives" width="70%">
+<img src="images2/A5a2.png" alt="Active Lives" width="60%">
+Figure A5a</p>
+<img src="images2/A5b2.png" alt="Active Lives" width="60%">
+Figure A5b</p>
 
 #### Histograms of people by LSOA:
 3 Large LSOA values relate to large university accommodation sites.  Population is transient.
-<img src="images2/A5c2.png" alt="Active Lives" width="70%">
-<img src="images2/A5d2.png" alt="Active Lives" width="70%">
+<img src="images2/A5c2.png" alt="Active Lives" width="60%">
+Figure A5c</p>
+
+<img src="images2/A5d2.png" alt="Active Lives" width="60%">
+Figure A5d</p>
 
 #### Distribution of Age:
-<img src="images2/A5e2.png" alt="Active Lives" width="70%">
+<img src="images2/A5e2.png" alt="Active Lives" width="60%">
+Figure A5e</p>
 
 #### Distribution of Age by Locality:
-<img src="images2/A5f2.png" alt="Active Lives" width="70%">
+<img src="images2/A5f2.png" alt="Active Lives" width="60%">
+Figure A5f</p>
 
 #### Distribution of IMD:
 PCA scaling prevents IMD from dominating.
-<img src="images2/A5g2.png" alt="Active Lives" width="70%">
+<img src="images2/A5g2.png" alt="Active Lives" width="60%">
+Figure A5g</p>
 
 ## Appendix 6
 #### Public project – R syntax for regression and Moran’s I
