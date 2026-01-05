@@ -3,7 +3,7 @@ layout: default
 title: BP0315003 Data Science Portfolio
 ---
 
-<img src="images2/ProfilePicture.png" alt="Profile Picture" width="25%">
+<img src="images2/ProfilePicture.png" alt="Profile Picture" width="25%"><br>
 (picture from CoPilot)
 
 # Data Science Professional Practice 1
