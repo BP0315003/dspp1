@@ -1,5 +1,4 @@
-# BP0315003 Data Science
-## Data Science Professional Practice 1
+# Data Science Professional Practice 1
 September 2025 term - Year 1 - Term 3
 
 ## Public Project - Active lives
