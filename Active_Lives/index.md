@@ -52,7 +52,7 @@ Power BI (PBI) displays LSOA activity data against England benchmarks.  Multiple
 
 As Bristol, North Somerset and South Gloucestershire (BNSSG) ICB (Integrated Care Board) will use this data, it was loaded into SQL server for PBI scheduling, although direct import from Excel is possible.  Power query ‘unpivots’ wide datasets into a long format as shown in figure P1, simplifying visualisation with minimal slicers and measures.  
 
-![Active_Lives](images2/P1.png)
+![Active_Lives](Active_Lives/images/P1.png)
 
 PBI is the organisation’s in-house dashboard tool; however, Quarto provides interactive visuals that are easier to distribute and function as a standalone solution.
 
