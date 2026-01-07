@@ -17,7 +17,7 @@ An anlysis of area level factors influencing activity levels in older adults wit
 
 #### Project results overview:
 Results show older adults’ lower activity is spatially clustered in deprived, urban LSOAs and in areas with higher proportions of carers and single-occupant households.
-Rural areas have different challenges with limited access to public green space, abundant green space being mostly private.  Geographically and culturally targeted interventions are needed, support for carers and access to rural facilities.  However, spatial autocorrelation exists and geographicall weighted regression needs to be undertaken to confirm results.
+Rural areas have different challenges with limited access to public green space, abundant green space being mostly private.  Geographically and culturally targeted interventions are needed, support for carers and access to rural facilities.  However, spatial autocorrelation exists and geographically weighted regression needs to be undertaken to confirm results.
 
 #### Data sources:
   - Sport England - Active Lives, Adults 22/23
